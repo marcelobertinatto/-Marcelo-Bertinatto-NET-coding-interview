@@ -18,6 +18,11 @@ public class BaseService<TEntity>(IRepository<TEntity> repository) : IService<TE
     {
         return OperationResult<IReadOnlyList<TEntity>>.Success(await repository.FilterAsync(predicate));
     }
+    
+    // public async Task<TEntity> UpdateAsync(TEntity entity)
+    // {
+    //     return ;
+    // }
 
     public async Task<OperationResult<TEntity>> FindAsync(params object[] keyValues)
     {
